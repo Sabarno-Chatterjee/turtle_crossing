@@ -1,6 +1,6 @@
 from turtle import Turtle
 STARTING_POSITION = (0, -280)
-MOVE_DISTANCE = 10
+MOVE_DISTANCE = 50
 FINISH_LINE_Y = 280
 
 
@@ -11,8 +11,12 @@ class Player(Turtle):
         self.penup()
         self.color("black")
         self.setheading(90)
-        self.goto(x=0,y=-280)
+        self.new_level()
+        self.move()
 
     def move(self):
-        self.forward(20)
+        self.forward(MOVE_DISTANCE)
+
+    def new_level(self):
+        self.goto(STARTING_POSITION)
 
